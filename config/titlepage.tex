@@ -1,0 +1,58 @@
+%% This is file titlepage.tex of ZwickTeX-Template
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%    \title - Befehl für einen Dokumententitel
+%    \maketitle - Befehl zur Erzeugung einer Titelseite
+%    \date - Befehl für das Datum
+%    \author - Autor des Dokumentes
+%    \titlehead - Kopf einer Titelseite
+%    \subject - Betreff des Dokumentes
+%    \subtitle - Untertitel
+%    \publishers - Herausgeber des Dokumentes
+%    \extratitle - Schmutztitel
+%    \uppertitleback - Titelrückseitenkopf
+%    \lowertitleback - Titelrückseitenfuß 
+%
+%	[fat] Anmerkung: Bitte entschuldigt diese furchtbare Verstümmelung der 
+%	Titlepage, aber ich musste Vorgaben umsetzen^^
+%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%% END of Header
+%
+\begin{titlepage}
+\renewcommand*{\baselinestretch}{1.0}
+%
+%% Schmutztitel
+%\extratitle{\setcounter{page}{0} \centering Schmutztitel \\ \zwicktex\xspace (C) 2012 \\ Für den Einband}
+%
+\titlehead{\pagenumbering{Roman}\setcounter{page}{1} \centering ~\includegraphics[width=3.33cm]{FHKufstein_grau60_EN}}
+%
+%\subject{}
+%
+\title{\protect{\Large{\getTitel}}}
+\subtitle{\smallskip ~\\ \normalfont \textsf{\large \getThesis \\ \bigskip zur Erlangung des akademischen Grades \\ \bigskip \getAkadGrad}}
+\author{
+\normalsize\textsf{Eingereicht bei} \\ 
+\normalsize\textsf{\textbf{Fachhochschule Kufstein Tirol Bildungs GmbH}} \\ 
+\normalsize\textsf{\textbf\getStudiengang} \\
+\bigskip \\
+\normalsize\textsf{\AutorGenderSpecific} \\ 
+\normalsize\textsf{\textbf\getAutor} \\ 
+\normalsize\textsf{\textbf{\oldstylenums{\getMatrNr}}} \\ 
+\bigskip \\
+\normalsize\textsf{\BetreuerGenderSpecific} \\ 
+\normalsize\textsf{\textbf\getBetreuer}}
+\date{~}
+\publishers{\centering \normalfont\normalsize\textsf{Abgabedatum} \medskip \\ \normalsize\textsf{\textbf\getDatum}}
+%
+%% Nur bei zweiseitig
+%\uppertitleback{Obiger Titelrückentitel}
+%
+%\lowertitleback{Für dieses Beispiel wird keine Haftung übernommen.}
+%
+%% Danksagung auf der zweiten Seite
+%\dedication{Dieses Beispiel widme ich\\allen LaTeX Usern}
+%
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\maketitle
+\end{titlepage}
+%% EOF titlepage.tex

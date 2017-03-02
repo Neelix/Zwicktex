@@ -1,0 +1,79 @@
+% MakeIndex-Style fuer die KOMA-Script-Anleitung
+% Dies ist auf meinen Mist gewachsen (Harald Sommerfeldt)
+%
+% Aufruf:
+%   makeind(e)x -g -r -s scrguide.ist scrguide.idx
+%
+
+actual '='
+level '>'
+%encap  '!'
+quote '+'
+suffix_2p "\\,f." % S.bereich "uber 2 S.: Zahl\,f.
+suffix_3p "\\,ff." % S.bereich "uber 3 S. Zahl\,ff.
+suffix_mp "\\,ff." % S.bereich >3 Seiten: Zahl\,ff.
+%
+% ein 'small'er Index macht sich irgendwie besser und spart Papier
+preamble  "\\clearpage\\begin{theindex}\\begin{small}\n"
+postamble "\n\n\\end{small}\\end{theindex}\n"
+%
+% und Punkte sind sowieso immer gut (es sei denn, sie liegen in Flensburg)
+delim_0 "~\\dotfill~"
+delim_1 "~\\dotfill~"
+delim_2 "~\\dotfill~"
+%
+% fehlen nur noch die Indexbuchstaben zu unserem Gl"uck
+%heading_prefix "{\\hspace{0pt plus 2fil}\\textbf{"
+heading_prefix "{\\textbf{"
+heading_suffix "}\\hspace{0pt plus 1fil}}\\nopagebreak\n"
+headings_flag  1
+symhead_positive "Symbole" % "Uberschrift f"ur Symbole
+numhead_positive "Zahlen" % f"ur Zahlen
+%
+% Ende der Datei `scrguide.ist'
+
+%
+%
+%  This file is part of
+%	MakeIndex - A formatter and format independent index processor
+%
+%  Author: Gabor Herr
+%
+%
+% $Log: din.ist,v $
+% Revision 1.1  1991/12/13  16:45:51  schrod
+% Initial revision
+%
+% Revision 1.1  1991/08/26  17:49:03  herr
+% Initial revision
+%
+%
+% german DIN 5007 sort rules for TeX and LaTeX
+
+% sort rules for TeX-style umlaut-macros
+sort_rule	"\\\"A"		"ae"
+sort_rule	"\\\"a"		"ae"
+sort_rule	"\\\"O"		"oe"
+sort_rule	"\\\"o"		"oe"
+sort_rule	"\\\"U"		"ue"
+sort_rule	"\\\"u"		"ue"
+sort_rule	"\\ss({})?"	"ss"
+
+% sort rules for german LaTeX-style umlaut-macros
+sort_rule	"\"A"		"ae"
+sort_rule	"\"a"		"ae"
+sort_rule	"\"O"		"oe"
+sort_rule	"\"o"		"oe"
+sort_rule	"\"U"		"ue"
+sort_rule	"\"u"		"ue"
+sort_rule	"\"s"		"ss"
+
+% define merge rules:
+include "german/umlaut.ist"	% don't remove umlaut-macros
+include "tex.ist"		% handle TeX and
+include "latex.ist"		% LaTeX stuff
+
+% define sort rules
+include "german/digit.ist"	% sort rules for digits
+include "german/special.ist"	% sort rules for special characters
+include "icase.ist"		% we sort case insensitive

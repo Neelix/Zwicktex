@@ -1,0 +1,91 @@
+%% This represents the Master-File of ZwickTeX-Template
+%% END of Header
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+%%%
+% Mögliche Klassen-Optionen:
+%  noindex -> Keinen Index erstellen
+%  noabbrevlist -> Kein Abkürzungsverzeichnis
+%  nolistoflists -> Kein Listings-Verzeichnis
+%  nolistoftables -> Kein Tabellenverzeichnis
+%  nolistoffigures -> Kein Abbildungsverzeichnis
+%  noappendixtoc -> Kein Anhangsverzeichnis
+%  nomarginnotes -> Alle Randnotizen ausblenden
+% ... plus die KOMA Klassenoptionen für scrreprt
+\documentclass[]{zwicktex}
+\input{content/Abkuerzungen}
+\input{content/Trennvorschriften}
+
+
+
+%%%
+% Wichtigste Einstellungen
+\setTitel{} 		% Titel der Arbeit
+\setAutor[m]{} 		% Hier kommt Dein Name rein, und in eckigen Klammern Dein Geschlecht (m/w) für Titelseite
+\setMatrNr{}		% Deine Matrikelnummer
+\setThesis{} 		% Was für ne Arbeit? (Default ist Diplomarbeit)
+\setAkadGrad{} 		% Zu erreichender Grad
+\setBetreuer[m]{} 	% Name des Betreuers, und in eckigen Klammern das Geschlecht (m/w) für Titelseite
+\setStudiengang{} 	% Dein Studiengang
+\setDatum{\today} 	% Abgabedatum (Default ist heutiges Datum: \today)
+\setKeywords{} 		% Deine Keywords, die evtl. im Summary später auftauchen (Zuletzt aufrufen!)
+
+%%%
+% Seitenränder ändern
+%\geometry{left=3.5cm,right=3cm,top=3cm,bottom=3cm}%
+
+
+
+%%%
+% Jetzt geht´s los
+%%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ \begin{document}
+%%-----------------------------------------------------------------------------------------------------
+% AB HIER KEINEN INHALT EINFÜGEN !!! Dafür gibt es die Hauptteil.tex 1elf!
+
+%%%
+% Befehl um die Titelseite zu generieren
+\Titelseite 
+
+
+%%%
+% Deine Erklärung an Eides statt
+\input{content/Erklaerung.tex} 
+
+
+%%%
+% Einstellungen und Verzeichnisse im Vorspann aufführen
+\Vorspann 
+  \input{content/Kurzfassung.tex} % Deine Kurzfassungen auf Deutsch und Englisch
+
+
+%%%
+% Einstellungen für den Hauptteil
+\Hauptteil 
+  \input{content/Hauptteil.tex} % Einbinden Deines Hauptwerkes
+
+
+%%%
+\Quellenverzeichnis{zwicktexTestDB} % Hier den Dateinamen Deiner Literatur-DB (ohne Endung)
+
+
+%%% Anhänge (nach dem Quellenverzeichnis; eigene Numerierung A1, A2)
+\Anhang
+  \input{content/Anhaenge.tex} % Na? Prinzip verstanden? ;-)
+
+
+
+
+
+
+
+
+%%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\end{document}
+%% End of Footer
+%% EOF Masterfile
+%%-----------------------------------------------------------------------------------------------------
+
+
+
